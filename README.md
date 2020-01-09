@@ -6,7 +6,7 @@
 2. **Add your presentation content**
     1. Slide deck (4 required slides)
     2. Links
-    3. Answer all questions 
+    3. Answer all questions
     4. YouTube demo video (1-2 min max)
 3. Polish your Github Code repository
     1. Add screenshots and an overview to your GitHub Code Repository
@@ -16,10 +16,10 @@
 
 ## Links
 
-* Github Code: `<insert Github repository link here>`
-* Github Proposal: `<insert Proposal Pull Request here>`
-* Trello/Github Project Kanban: `<insert trello board here>`
-* Test Flight Signup (Recommended): `<insert beta signup link here>`
+* Github Code: `https://github.com/LambdaSchool/ios-pt1-bw4-home-mortgate-calculator-corey-michael`
+* Github Proposal: `https://github.com/michaelstoffer/ios-pt1-build-sprint-4-project-proposal/edit/master/Answers.md`
+* Trello/Github Project Kanban: `https://github.com/LambdaSchool/ios-pt1-bw4-home-mortgate-calculator-corey-michael/issues`
+* Test Flight Signup (Recommended): `https://testflight.apple.com/join/4SeWreG2`
 * YouTube demo video (Recommended): `<insert video url here>`
 
 ## Hero Image
@@ -30,27 +30,60 @@
 
 1. What was your favorite feature to implement? Why?
 
-    `<Your answer here>`
+    `Some of the UI Features that make the app more user friendly. Because it makes the app look nice.`
 
 2. What was your #1 obstacle or bug that you fixed? How did you fix it?
 
-    `<Your answer here>`
-  
+    `The app was crashing when you left the text fields blank and hit the calculate button. We fixed it by removing the amortization schedule algorithm from the calculate button into its own button and this fixed the app so it wouldn't crash anymore. We also added some alerts so if the text fields are empty, they will show an alert letting the user know they forgot to fill something out.`
+
 3. Share a chunk of code (or file) you're proud of and explain why.
 
-    `<Your answer here>`
-  
+    `func textFieldDidBeginEditing(_ textField: UITextField) {
+        textField.layer.borderWidth = 2.0
+        textField.layer.borderColor = UIColor.systemGreen.cgColor
+        textField.layer.cornerRadius = 5
+    }`
+
+    `func textFieldDidEndEditing(_ textField: UITextField) {
+        textField.layer.borderWidth = 1.0
+        textField.layer.borderColor = UIColor.systemGray.cgColor
+        textField.layer.cornerRadius = 5
+        if textField == homePriceTxtField {
+            guard let value = textField.text, !value.isEmpty else { return }
+            let doubleVal = (value as NSString).doubleValue
+            self.principalAmount = doubleVal
+            textField.text = formatCurrencyValue(value: doubleVal)
+        } else if textField == downPaymentTxtField {
+            guard let value = textField.text, !value.isEmpty else { return }
+            let doubleVal = (value as NSString).doubleValue
+            self.downPayment = doubleVal
+            let percentage = Int((self.downPayment / self.principalAmount) * 100)
+            downPmtPercentageLbl.text = "(\(percentage)%)"
+            textField.text = formatCurrencyValue(value: doubleVal)
+        } else if textField == interestRateTxtField {
+            guard let value = textField.text, !value.isEmpty else { return }
+            let doubleVal = (value as NSString).doubleValue
+            self.interestRate = doubleVal
+            textField.text = formatPercentageValue(value: doubleVal)
+        } else if textField == loanTermTxtField {
+            guard let value = textField.text, !value.isEmpty else { return }
+            let doubleVal = (value as NSString).doubleValue
+            self.termLength = doubleVal
+            textField.text = formatTermValue(value: doubleVal)
+        }
+    }`
+
 4. What is your elevator pitch? (30 second description your Grandma or a 5-year old would understand)
 
-    `<Your answer here>`
-  
+    `A quick and easy way to find a monthly payment for a mortgage based on the cost of the house, down payment, interest rate and loan term.`
+
 5. What is your #1 feature?
 
-    `<Your answer here>`
-  
+    `Showing the user how each monthly payment will be applied to the principal of the loan via an Amortization Schedule.`
+
 6. What are you future goals?
 
-    `<Your answer here>`
+    `Selling to Warren Buffet for 1 billion dollars.`
 
 ## Required Slides (Add your Keynote to your PR)
 
