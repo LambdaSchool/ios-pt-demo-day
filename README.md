@@ -25,7 +25,9 @@
 
 ## Hero Image
 
-`<Post one screenshot in an iPhone Simulator frame or an iPhone 11 Pro render using placeit.com>`
+<p align="center">
+    <img
+        src="https://github.com/davidtwright/ios-pt-demo-day/blob/master/Simulator%20Screen%20Shot%20-%20iPhone%2011%20Pro%20Max%20-%202020-01-13%20at%2023.30.33.png" width="300" alt="Countdowns" />
 
 ## Questions (Answer indented below)
 
