@@ -16,41 +16,64 @@
 
 ## Links
 
-* Github Code: `<insert Github repository link here>`
-* Github Proposal: `<insert Proposal Pull Request here>`
-* Trello/Github Project Kanban: `<insert trello board here>`
+* Github Code: `<https://github.com/gh04/Unit-1-Countdown-Tracker>`
+* Github Proposal: `<https://github.com/LambdaSchool/ios-build-sprint-project-proposal/pull/23>`
+* Trello/Github Project Kanban: `<https://github.com/gh04/Unit-1-Countdown-Tracker/projects/1>`
 * Test Flight Signup (Recommended): `<insert beta signup link here>`
 * YouTube demo video (Recommended): `<insert video url here>`
+* Presentation Slides: `<https://docs.google.com/presentation/d/1oV5XA_L9_2taqGVN7GkOf1UfFRVMJ75nvQDh0XiEZp0/edit?usp=sharing>`
 
 ## Hero Image
 
-`<Post one screenshot in an iPhone Simulator frame or an iPhone 11 Pro render using placeit.com>`
+<p align="center">
+    <img
+        src="https://github.com/davidtwright/ios-pt-demo-day/blob/master/Simulator%20Screen%20Shot%20-%20iPhone%2011%20Pro%20Max%20-%202020-01-13%20at%2023.30.33.png" width="300" alt="Countdowns" />
 
 ## Questions (Answer indented below)
 
 1. What was your favorite feature to implement? Why?
 
-    `<Your answer here>`
+`<The sort feature was our favorite feature to implement because the code for that was very clean and straightforward.>`
 
 2. What was your #1 obstacle or bug that you fixed? How did you fix it?
 
-    `<Your answer here>`
+`<Our #1 obstacle was figuring out how to implement persistance on a class that has a timer object inside of it. We created a seperate class that holds all of the data that we needed to persist and then set the class with the timer as a subclass of the new persisting data class.>`
   
 3. Share a chunk of code (or file) you're proud of and explain why.
 
-    `<Your answer here>`
+`<I'm proud of how clean and simple the sorting function turned out to be.>`
+
+func sortedCountdowns(from countdowns: [Countdown], with sortStyle: SortStyle? = nil) -> [Countdown] {
+
+    let sortStyle = sortStyle ?? self.sortStyle
+    
+    switch sortStyle {
+    case .time_minToMax:
+        return countdowns.sorted { $0.eventDate < $1.eventDate }
+    case .time_maxToMin:
+        return countdowns.sorted { $0.eventDate > $1.eventDate }
+    case .tagName_AToZ:
+        return countdowns.sorted { $0.tag.lowercased() < $1.tag.lowercased() }
+    case .tagName_ZToA:
+        return countdowns.sorted { $0.tag.lowercased() > $1.tag.lowercased() }
+    case .eventName_AToZ:
+        return countdowns.sorted { $0.eventName.lowercased() < $1.eventName.lowercased() }
+    case .eventName_ZToA:
+        return countdowns.sorted { $0.eventName.lowercased() > $1.eventName.lowercased() }
+    }
+}
   
 4. What is your elevator pitch? (30 second description your Grandma or a 5-year old would understand)
 
-    `<Your answer here>`
+`<Countdowns Tracker is the first countdown app designed with productivity in mind. The ability to tag, edit, filter and sort your countdowns with just the tap of a finger makes creating and managing any number of countdowns a breeze. Let your technology work for you. Countdowns Tracker will help you organize and prioritize all the things you need to do get done in this fast-paced world.>`
   
 5. What is your #1 feature?
 
-    `<Your answer here>`
+`<Our #1 feature is the ability to set custom tags along with each countdown and then be able to filter the countdowns by their specific tag name.>`
   
 6. What are you future goals?
 
-    `<Your answer here>`
+`<Our future goals are: 1. Redesign the countdown display to make it more visually appealing. 2. Generate an alert outside the app to let the user know when a countdown has expired. 3. Give users the ability to sync calendars to create new countdowns.>`
 
 ## Required Slides (Add your Keynote to your PR)
 
