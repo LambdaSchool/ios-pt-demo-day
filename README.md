@@ -16,41 +16,101 @@
 
 ## Links
 
-* Github Code: `<insert Github repository link here>`
-* Github Proposal: `<insert Proposal Pull Request here>`
-* Trello/Github Project Kanban: `<insert trello board here>`
+* Github Code: `https://github.com/LambdaSchool/ios-pt2-bw4-lock-key-robert`
+* Github Proposal: `https://github.com/Keffury1/ios-build-sprint-project-proposal`
+* Trello/Github Project Kanban: `https://github.com/LambdaSchool/ios-pt2-bw4-lock-key-robert/projects/2`
 * Test Flight Signup (Recommended): `<insert beta signup link here>`
 * YouTube demo video (Recommended): `<insert video url here>`
 
 ## Hero Image
 
-`<Post one screenshot in an iPhone Simulator frame or an iPhone 11 Pro render using placeit.com>`
+`(/Users/bobbykeffury/Development/Lambda/Sprints/Build Sprint - 4/Lock & Key/Lock & Key/Screenshots/Opening.png)`
 
 ## Questions (Answer indented below)
 
 1. What was your favorite feature to implement? Why?
 
-    `<Your answer here>`
+`Alerts Interacting together in the SharedController.`
 
 2. What was your #1 obstacle or bug that you fixed? How did you fix it?
 
-    `<Your answer here>`
+`Understanding In App Purchases. I was able to study and find the right resources to help explain.`
   
 3. Share a chunk of code (or file) you're proud of and explain why.
 
-    `<Your answer here>`
+`It was at this moment I truly understoon functions and passing information.`
+  
+  func addRiddleAlert(riddle: String, answer: String, clue: String, viewController: UIViewController, button: UIButton?, gesture: UIGestureRecognizer?, view: UIView?, segue: String, audioPlayer: AVAudioPlayer?) {
+      
+      let riddleAlert = UIAlertController(title: riddle, message: "", preferredStyle: UIAlertController.Style.alert)
+      
+      if audioPlayer == nil {
+          riddleAlert.addTextField(configurationHandler: { (textField) in
+              textField.placeholder = "Enter correct answer:"
+          })
+      } else {
+          riddleAlert.addTextField(configurationHandler: { (textField) in
+              textField.placeholder = "Enter song name:"
+          })
+      }
+      
+      riddleAlert.addAction(UIAlertAction(title: "Submit", style: UIAlertAction.Style.default, handler: { (action: UIAlertAction!) in
+          guard let guess = riddleAlert.textFields![0].text?.lowercased() else { return }
+          
+          if guess == answer {
+              riddleAlert.message = ""
+              riddleAlert.dismiss(animated: true, completion: nil)
+              self.addGestureAlert(with: clue, viewController: viewController, audioPlayer: audioPlayer)
+              self.shadowOn(for: button, or: view)
+              button?.isEnabled = true
+              gesture?.isEnabled = true
+          } else {
+              CATransaction.setCompletionBlock({
+                  self.addRejectedAlert(for: viewController, riddle: riddle, answer: answer, clue: clue, button: button, gesture: gesture, view: view, segue: segue, audioPlayer: audioPlayer)
+              })
+          }
+      }))
+      riddleAlert.addAction(UIAlertAction(title: "Home", style: UIAlertAction.Style.cancel, handler: { _ in
+          audioPlayer?.stop()
+          self.fadeViewOut(view: viewController.view)
+          self.segueAfterFadeOut(viewController: viewController, segue: segue)
+      }))
+      
+      viewController.present(riddleAlert, animated: true, completion: nil)
+      
+      if viewController.traitCollection.userInterfaceStyle == .dark {
+          riddleAlert.view.tintColor = .white
+      } else {
+          riddleAlert.view.tintColor = .black
+      }
+  }
+  
+  private func addRejectedAlert(for viewController: UIViewController, riddle: String, answer: String, clue: String, button: UIButton?, gesture: UIGestureRecognizer?, view: UIView?, segue: String, audioPlayer: AVAudioPlayer?) {
+      let rejectedAlert = UIAlertController(title: "Wrong Answer", message: "please try again", preferredStyle: UIAlertController.Style.alert)
+      rejectedAlert.addAction(UIAlertAction(title: "OK", style: UIAlertAction.Style.cancel, handler: { _ in
+          self.addRiddleAlert(riddle: riddle, answer: answer, clue: clue, viewController: viewController, button: button, gesture: gesture, view: view, segue: segue, audioPlayer: audioPlayer)
+      }))
+      viewController.present(rejectedAlert, animated: true, completion: nil)
+      
+      if viewController.traitCollection.userInterfaceStyle == .dark {
+          rejectedAlert.view.tintColor = .white
+      } else {
+          rejectedAlert.view.tintColor = .black
+      }
+  }
+  
   
 4. What is your elevator pitch? (30 second description your Grandma or a 5-year old would understand)
 
-    `<Your answer here>`
-  
+`This is a game made of completely original riddles. Play to stay mentally sharp or to simply enjoy a new game on the market that does what other games have yet to do.  Notice the clean, crisp, fun design in each of the levels. Designed not to be beaten, you will always get your money's worth.`
+
 5. What is your #1 feature?
 
-    `<Your answer here>`
+`Completely custom game of riddles.`
   
 6. What are you future goals?
 
-    `<Your answer here>`
+`Publish to the App Store. Begin my next project.`
 
 ## Required Slides (Add your Keynote to your PR)
 
