@@ -24,7 +24,7 @@
 
 ## Hero Image
 
-<img src="Water My Plant Main Screen.png" width="400">
+<img src="Water My Plant Main Screen.png" width="500">
 
 ## Questions (Answer indented below)
 
@@ -40,7 +40,7 @@ Trying to get out detailVC to updated the "Plant" was tough. It alway ends up be
 
 ![Code Snippet Screenshot](https://github.com/bgreek/ios-pt-demo-day/blob/master/Code%20Snippet.png)
     
-    This bit of code if fairly straight forward, but took me forever to figure out. I really wanted to add the notification, since the whole idea of the app is to remind people to water their plant. This notification asks once for permission to send notification to the phone. Once the "Needs water" button is tapped, it is set up on a 15 second timer to send a notification. Obviousely this is not user friendly in a purposeful manner, but eventually I would like to have it set up on a timer linked to the input the user specifies on the add plant page.
+This bit of code if fairly straight forward, but took me forever to figure out. I really wanted to add the notification, since the whole idea of the app is to remind people to water their plant. This notification asks once for permission to send notification to the phone. Once the "Needs water" button is tapped, it is set up on a 15 second timer to send a notification. Obviousely this is not user friendly in a purposeful manner, but eventually I would like to have it set up on a timer linked to the input the user specifies on the add plant page.
   
 4. What is your elevator pitch? (30 second description your Grandma or a 5-year old would understand)
 
