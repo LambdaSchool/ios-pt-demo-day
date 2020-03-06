@@ -20,7 +20,7 @@
 * Github Proposal: https://github.com/bgreek/ios-build-sprint-project-proposal.git
 * Trello/Github Project Kanban: https://www.notion.so/3d9ebfafe2f445a7a6510a72beda26b9?v=6b72d2ab175047bd9c9d1a242162e469
 * Test Flight Signup (Recommended): NA
-* YouTube demo video (Recommended): `<insert video url here>`
+* YouTube demo video (Recommended): https://youtu.be/hGLLReu5Yhc
 
 ## Hero Image
 
@@ -34,25 +34,25 @@
 
 #### 2. What was your #1 obstacle or bug that you fixed? How did you fix it?
 
-Trying to get out detailVC to updated the "Plant" was tough. It alway ends up being a few small errors that hold you back. But we tracked them down one by one to get it to work. Lesson of the day, ALWAY CHECK YOUR OUTLETS.
+> Trying to get out detailVC to updated the "Plant" was tough. It alway ends up being a few small errors that hold you back. But we tracked them down one by one to get it to work. Lesson of the day, ALWAY CHECK YOUR OUTLETS.
   
 #### 3. Share a chunk of code (or file) you're proud of and explain why.
 
 ![Code Snippet Screenshot](https://github.com/bgreek/ios-pt-demo-day/blob/master/Code%20Snippet.png)
     
-This bit of code if fairly straight forward, but took me forever to figure out. I really wanted to add the notification, since the whole idea of the app is to remind people to water their plant. This notification asks once for permission to send notification to the phone. Once the "Needs water" button is tapped, it is set up on a 15 second timer to send a notification. Obviousely this is not user friendly in a purposeful manner, but eventually I would like to have it set up on a timer linked to the input the user specifies on the add plant page.
+> This bit of code if fairly straight forward, but took me forever to figure out. I really wanted to add the notification, since the whole idea of the app is to remind people to water their plant. This notification asks once for permission to send notification to the phone. Once the "Needs water" button is tapped, it is set up on a 15 second timer to send a notification. Obviousely this is not user friendly in a purposeful manner, but eventually I would like to have it set up on a timer linked to the input the user specifies on the add plant page.
   
 #### 4. What is your elevator pitch? (30 second description your Grandma or a 5-year old would understand)
 
-This app will allow you to keep track of your plants needs, location, and status. We all have busy lives, so it will also remind you when that specific plant is due to be watered again. You have the ability to edit your plants needs as well if you are finding what was originally entered does not work for this plant. 
+> This app will allow you to keep track of your plants needs, location, and status. We all have busy lives, so it will also remind you when that specific plant is due to be watered again. You have the ability to edit your plants needs as well if you are finding what was originally entered does not work for this plant. 
   
 #### 5. What is your #1 feature?
 
-I think the number one feature is the notification that is sent to the users phone to remind them to water their plant. It is the whole purpose of this app to take the stress of remembering to water the plants off the user, and remind them when they need to do so. 
+> I think the number one feature is the notification that is sent to the users phone to remind them to water their plant. It is the whole purpose of this app to take the stress of remembering to water the plants off the user, and remind them when they need to do so. 
   
 #### 6. What are you future goals?
 
-I would ultimately like to have the timer (when the button is tapped) linked to a user input that would have to take specific values, maybe a pickerview for daily, weekly, ect. Then of course of the notification notify the user based off those values. 
+> I would ultimately like to have the timer (when the button is tapped) linked to a user input that would have to take specific values, maybe a pickerview for daily, weekly, ect. Then of course of the notification notify the user based off those values. 
 
 ## Required Slides (Add your Keynote to your PR)
 
