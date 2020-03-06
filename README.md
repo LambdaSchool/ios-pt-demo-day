@@ -24,7 +24,7 @@
 
 ## Hero Image
 
-
+<img src="Water My Plant Main Screen.png" width="400">
 
 ## Questions (Answer indented below)
 
