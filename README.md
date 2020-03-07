@@ -2,12 +2,12 @@
 
 ## Requirements
 2. <h2>**Moody Me**</h2> </p>
-    <img src="Images/selectMood.png" height="200px">
-    <img src="Images/addComment.png" height="200px">
-    <img src="Images/quote.png" height="200px">
-    <img src="Images/tracking.png" height="200px">
-    <img src="Images/graph.png" height="200px">
-    <img src="Images/editComments.png" height="200px"></p>
+    <img src="Images/selectMood.png" height="300px">
+    <img src="Images/addComment.png" height="300px">
+    <img src="Images/quote.png" height="300px">
+    <img src="Images/tracking.png" height="300px">
+    <img src="Images/graph.png" height="300px">
+    <img src="Images/editComments.png" height="300px"></p>
     2. Links
     3. Answer all questions 
     4. YouTube demo video (1-2 min max)
