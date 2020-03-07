@@ -5,7 +5,12 @@
 1. Fork and clone the repository
 2. **Add your presentation content**
     1. Slide deck (4 required slides)
-    <img src="Images/selectMood.png" width="200px">
+    <img src="Images/selectMood.png" width="250px">
+    <img src="Images/addComment.png" width="250px">
+    <img src="Images/quote.png" width="250px">
+    <img src="Images/tracking.png" width="250px">
+    <img src="Images/graph.png" width="250px">
+    <img src="Images/editComments.png" width="250px">
     2. Links
     3. Answer all questions 
     4. YouTube demo video (1-2 min max)
