@@ -68,15 +68,15 @@ private func setValue(_ newValue: Double, for unit: Unit) {
   
 4. What is your elevator pitch? (30 second description your Grandma or a 5-year old would understand)
 
-    `<Your answer here>`
+    Ruler makes distance unit conversions simple and fast! When the app starts up, tap your unit in the list, enter a value, and instantly see the result in any other distance unit you want! If you need to paste the result in another app, just double-tap on the unit to copy the value to the clipboard!
   
 5. What is your #1 feature?
 
-    Instant feedback
+    Instant feedback / Speed / Ease of use
   
 6. What are you future goals?
 
-    `<Your answer here>`
+    I'd like to add an option to display less used units, such as microns, mils, leagues, fathoms, etc. Another feature to add would be a ruler that would display on the phone screen, to measure smaller items.
 
 ## Required Slides (Add your Keynote to your PR)
 
