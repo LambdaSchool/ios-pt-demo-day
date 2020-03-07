@@ -23,7 +23,7 @@
 * Github Proposal: `<insert Proposal Pull Request here>`
 * Trello/Github Project Kanban: `<insert trello board here>`
 * Test Flight Signup (Recommended): `<insert beta signup link here>`
-* YouTube demo video (Recommended): `<insert video url here>`
+* YouTube demo video (Recommended): https://youtu.be/hA554KGEtV8
 
 ## Hero Image
 
