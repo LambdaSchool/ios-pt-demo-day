@@ -21,6 +21,7 @@
 * Trello/Github Project Kanban: https://www.notion.so/3d9ebfafe2f445a7a6510a72beda26b9?v=6b72d2ab175047bd9c9d1a242162e469
 * Test Flight Signup (Recommended): NA
 * YouTube demo video (Recommended): https://youtu.be/hGLLReu5Yhc
+* SlideShow: https://www.canva.com/design/DAD1ug7VziQ/2SO8Xg7Ja0alcXAfvE7g5A/edit?category=tACFasDnyEQ
 
 ## Hero Image
 
