@@ -16,10 +16,8 @@
 
 ## Links
 
-* Github Code: `<insert Github repository link here>`
-* Github Proposal: `<insert Proposal Pull Request here>`
-* Trello/Github Project Kanban: `<insert trello board here>`
-* Test Flight Signup (Recommended): `<insert beta signup link here>`
+* Github Proposal: https://github.com/matt-martindale/ios-build-sprint-project-proposal
+* Trello/Github Project Kanban: https://www.notion.so/3ee4fdd8057a423bb1e1eb3f8282cc6b?v=c7eff0fd505f465a830043392c30af9d
 * YouTube demo video (Recommended): https://youtu.be/hA554KGEtV8
 
 ## Hero Image
