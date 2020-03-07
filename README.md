@@ -16,10 +16,10 @@
 
 ## Links
 
-* Github Code: `<insert Github repository link here>`
-* Github Proposal: `<insert Proposal Pull Request here>`
-* Trello/Github Project Kanban: `<insert trello board here>`
-* Test Flight Signup (Recommended): `<insert beta signup link here>`
+* Github Code: https://github.com/iOSPT5-BW1/Unit-Converter-I
+* Github Proposal: https://github.com/LambdaSchool/ios-build-sprint-project-proposal/pull/58
+* Trello/Github Project Kanban: https://www.notion.so/3a63b0e503ae4d6486c527e086ce0ed3?v=96433557bcb24134bef273f71d89da9e
+* Test Flight Signup (Recommended): N/A
 * YouTube demo video (Recommended): `<insert video url here>`
 
 ## Hero Image
@@ -30,15 +30,41 @@
 
 1. What was your favorite feature to implement? Why?
 
-    `<Your answer here>`
+    I think my favorite was the calculation logic and storing values, but more on that on #2 and #3.
+
+    I also liked implementing double-tap on the units label to copy the current value to the clipboard. I started out with tap gestures on the whole cell, but they interfered with text input, so I added a button over the right side of the cell (over the units label). A regular single tap selects the unit's text field, which worked fine with the button, but there is no double-tap action for a button, so I added a double-tap gesture on the button, which worked! I wanted temporary feedback to show what happened, so I show and fade out a label saying the value was copied to the clipboard.
 
 2. What was your #1 obstacle or bug that you fixed? How did you fix it?
 
-    `<Your answer here>`
+    My biggest obstacle was figuring out how to fix a calculation bug that caused rounding errors. I started out making each unit store its equivalent value in inches, and always calculating: InputValue -> ValueInInches -> OutputValue, which caused problems with metric units. I solved it by storing metric units as equivalent value in meters, and converting between imperial and metric only when necessary.
   
 3. Share a chunk of code (or file) you're proud of and explain why.
 
-    `<Your answer here>`
+    Once I realized I needed to store either an imperial value or a metric value, I decided to create an enum with associated values, which is stored in each unit. I save the current value based on the unit type and its native value.
+
+```swift
+enum UnitTypeValue {
+    case imperial(Double) // value in inches
+    case metric(Double) // value in meters
+}
+
+struct Unit {
+    let name: String
+    let type: UnitTypeValue
+}
+
+private func setValue(_ newValue: Double, for unit: Unit) {
+    switch unit.type {
+    case .imperial(let howManyInches):
+        currentValueType = .imperial
+        currentValue = newValue * howManyInches
+    case .metric(let howManyMeters):
+        currentValueType = .metric
+        currentValue = newValue * howManyMeters
+    }
+    NotificationCenter.default.post(name: .valueHasChanged, object: nil)
+}
+```
   
 4. What is your elevator pitch? (30 second description your Grandma or a 5-year old would understand)
 
@@ -46,7 +72,7 @@
   
 5. What is your #1 feature?
 
-    `<Your answer here>`
+    Instant feedback
   
 6. What are you future goals?
 
