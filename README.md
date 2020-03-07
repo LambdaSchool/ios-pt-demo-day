@@ -8,9 +8,6 @@
     <img src="Images/tracking.png" height="300px">
     <img src="Images/graph.png" height="300px">
     <img src="Images/editComments.png" height="300px"></p>
-    2. Links
-    3. Answer all questions 
-    4. YouTube demo video (1-2 min max)
 3. Polish your Github Code repository
     1. Add screenshots and an overview to your GitHub Code Repository
     2. You should make that repository the "Public Portfolio" for your project
