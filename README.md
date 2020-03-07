@@ -5,6 +5,7 @@
 1. Fork and clone the repository
 2. **Add your presentation content**
     1. Slide deck (4 required slides)
+    <img src="Images/selectMood.png" width="200px">
     2. Links
     3. Answer all questions 
     4. YouTube demo video (1-2 min max)
