@@ -24,7 +24,7 @@
 
 ## Hero Image
 
-`<Post one screenshot in an iPhone Simulator frame or an iPhone 11 Pro render using placeit.com>`
+![screen shot of image selection](https://github.com/clc80/ios-pt-demo-day/blob/master/Screen%20Shot%202020-03-08%20at%203.10.57%20PM.png)
 
 ## Questions (Answer indented below)
 
@@ -72,15 +72,15 @@
   
 4. What is your elevator pitch? (30 second description your Grandma or a 5-year old would understand)
 
-    `An app to track your moods. `
+    `An app to track your moods, with or without a comment. Will give you a motivational quote to help you out. Stack view or graph view visual representation of the data. `
   
 5. What is your #1 feature?
 
-    `<Your answer here>`
+    `The graph visual representation of the data`
   
 6. What are you future goals?
 
-    `<Your answer here>`
+    `Being able to select to see data from only the past week, month, year or all the data. This would be implemented in both the table and the graph.`
 
 ## Required Slides (Add your Keynote to your PR)
 
