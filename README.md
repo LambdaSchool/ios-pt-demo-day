@@ -16,15 +16,15 @@
 
 ## Links
 
-* Github Code: `<insert Github repository link here>`
-* Github Proposal: `<insert Proposal Pull Request here>`
-* Trello/Github Project Kanban: `<insert trello board here>`
+* Github Code: https://github.com/LambdaSchool/ios-pt2-bw4-worn-out-vici
+* Github Proposal: https://github.com/LambdaSchool/ios-build-sprint-project-proposal/pull/50
+* Trello/Github Project Kanban: https://github.com/LambdaSchool/ios-pt2-bw4-worn-out-vici/projects/1
 * Test Flight Signup (Recommended): `<insert beta signup link here>`
 * YouTube demo video (Recommended): `<insert video url here>`
 
 ## Hero Image
 
-`<Post one screenshot in an iPhone Simulator frame or an iPhone 11 Pro render using placeit.com>`
+<img src="images/WornOut.png" width="300">
 
 ## Questions (Answer indented below)
 
