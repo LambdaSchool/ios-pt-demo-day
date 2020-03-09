@@ -24,7 +24,7 @@
 
 ## Hero Image
 
-<img src="images/WornOut.png" width="300">
+<img src="images/WornOut.png" width="1000">
 
 ## Questions (Answer indented below)
 
