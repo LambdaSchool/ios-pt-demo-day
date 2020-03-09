@@ -82,8 +82,10 @@
 
     `Being able to select to see data from only the past week, month, year or all the data. This would be implemented in both the table and the graph.`
 
-## Required Slides (Add your Keynote to your PR)
+## Google Presentation: 
+https://docs.google.com/presentation/d/1V_-Kayu8FyhBHycC6-gAkP9Hft8hqXq6xvUhuioCOCE/edit?usp=sharing
 
+## Required Slides (Add your Keynote to your PR)
 1. App Name / Team Slide
 2. Elevator Pitch
 3. Your #1 Feature (Customer facing — what can I do with your app?)
