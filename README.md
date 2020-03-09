@@ -16,44 +16,76 @@
 
 ## Links
 
-* Github Code: `<insert Github repository link here>`
-* Github Proposal: `<insert Proposal Pull Request here>`
-* Trello/Github Project Kanban: `<insert trello board here>`
+* Github Code: `https://github.com/iOSPT5-BW1/Mood-Tracker`
+* Github Proposal: `https://github.com/LambdaSchool/ios-build-sprint-project-proposal/pull/51`
+* Trello/Github Project Kanban: `https://www.notion.so/3ee4fdd8057a423bb1e1eb3f8282cc6b?v=c7eff0fd505f465a830043392c30af9d`
 * Test Flight Signup (Recommended): `<insert beta signup link here>`
-* YouTube demo video (Recommended): `<insert video url here>`
+* YouTube demo video (Recommended): `https://youtu.be/ETCJeRKu03M`
 
 ## Hero Image
 
-`<Post one screenshot in an iPhone Simulator frame or an iPhone 11 Pro render using placeit.com>`
+![screen shot of image selection](https://github.com/clc80/ios-pt-demo-day/blob/master/Screen%20Shot%202020-03-08%20at%203.10.57%20PM.png)
 
 ## Questions (Answer indented below)
 
 1. What was your favorite feature to implement? Why?
 
-    `<Your answer here>`
+    `Adding the Quote API. Before finding the API I was overthinking the process of having to find quotes and pcures and making it all fit together on the screen. Having long quotes, short quotes and making everything look good. That seemed more daunting than implementing the API`
 
 2. What was your #1 obstacle or bug that you fixed? How did you fix it?
 
-    `<Your answer here>`
+    `Having the tableview and the chart reload after data was added. Both of these were hard to fix and very frustrating. The tableview was resolved using delegates and protocols and the chart was fixed using noification center. It was a fantastic learning experience but it was also very frustrating.`
   
 3. Share a chunk of code (or file) you're proud of and explain why.
-
-    `<Your answer here>`
+    ```
+    func createObserver() {
+        NotificationCenter.default.addObserver(self, selector: #selector(GraphViewController.updateChart(notification:)), name: moodName, object: nil)
+        
+        NotificationCenter.default.addObserver(self, selector: #selector(GraphViewController.deleteData(notification:)), name: moodDeletedName, object: nil)
+    }
+    
+    @objc func updateChart(notification: NSNotification) {
+        let moodController = notification.object as! MoodModelController
+        let lastMood = moodController.moods.last
+        
+        switch lastMood!.emotion.state.rawValue {
+        case "angry":
+            angryData.value += 1
+        case "happy":
+            happyData.value += 1
+        case "sad":
+            sadData.value += 1
+        case "excited":
+            excitedData.value += 1
+        case "annoyed":
+            annoyedData.value += 1
+        case "meh":
+            mehData.value += 1
+        default:
+            print("Data not found")
+        }
+        
+        numberOfMoodDataEntries = [angryData, happyData, sadData, excitedData, annoyedData, mehData]
+        updateChartData()
+    }```
+    `I hadn't heard of notifications and observers until it was suggested that I add them to the project to help resolve the update issue. I was freaking out about implementing it but I did it. I asked for help and the issue even stumped others but I was able to solve it. `
   
 4. What is your elevator pitch? (30 second description your Grandma or a 5-year old would understand)
 
-    `<Your answer here>`
+    `An app to track your moods, with or without a comment. Will give you a motivational quote to help you out. Stack view or graph view visual representation of the data. `
   
 5. What is your #1 feature?
 
-    `<Your answer here>`
+    `The graph visual representation of the data`
   
 6. What are you future goals?
 
-    `<Your answer here>`
+    `Being able to select to see data from only the past week, month, year or all the data. This would be implemented in both the table and the graph.`
+
+## Google Presentation: 
+https://docs.google.com/presentation/d/1V_-Kayu8FyhBHycC6-gAkP9Hft8hqXq6xvUhuioCOCE/edit?usp=sharing
 
 ## Required Slides (Add your Keynote to your PR)
-
 1. App Name / Team Slide
 2. Elevator Pitch
 3. Your #1 Feature (Customer facing — what can I do with your app?)
