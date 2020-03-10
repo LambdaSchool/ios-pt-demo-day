@@ -1,13 +1,13 @@
 # iOSPT Demo Day
 
 ## Requirements
-
-1. Fork and clone the repository
-2. **Add your presentation content**
-    1. Slide deck (4 required slides)
-    2. Links
-    3. Answer all questions 
-    4. YouTube demo video (1-2 min max)
+2. <h2>**Moody Me**</h2> </p>
+    <img src="Images/selectMood.png" height="300px">
+    <img src="Images/addComment.png" height="300px">
+    <img src="Images/quote.png" height="300px">
+    <img src="Images/tracking.png" height="300px">
+    <img src="Images/graph.png" height="300px">
+    <img src="Images/editComments.png" height="300px"></p>
 3. Polish your Github Code repository
     1. Add screenshots and an overview to your GitHub Code Repository
     2. You should make that repository the "Public Portfolio" for your project
@@ -16,41 +16,52 @@
 
 ## Links
 
-* Github Code: `<insert Github repository link here>`
-* Github Proposal: `<insert Proposal Pull Request here>`
-* Trello/Github Project Kanban: `<insert trello board here>`
-* Test Flight Signup (Recommended): `<insert beta signup link here>`
-* YouTube demo video (Recommended): `<insert video url here>`
+* Github Proposal: https://github.com/matt-martindale/ios-build-sprint-project-proposal
+* Trello/Github Project Kanban: https://www.notion.so/3ee4fdd8057a423bb1e1eb3f8282cc6b?v=c7eff0fd505f465a830043392c30af9d
+* YouTube demo video (Recommended): https://youtu.be/hA554KGEtV8
 
 ## Hero Image
 
-`<Post one screenshot in an iPhone Simulator frame or an iPhone 11 Pro render using placeit.com>`
+<img src="Images/hero.png" width="650px">
 
 ## Questions (Answer indented below)
 
 1. What was your favorite feature to implement? Why?
 
-    `<Your answer here>`
+    My favorite feature that we implemented was the ability to quickly see what mood you chose and the comment in the tableView. When viewing the tableView you can quickly see what mood you selected for that day by the dynamic color of each cell. And the abiilty to see a preview of the comment you made for that day really helps you get the necessary information at a quick glance.
 
 2. What was your #1 obstacle or bug that you fixed? How did you fix it?
 
-    `<Your answer here>`
+    The biggest obstacle for me was the figuring out how to move the objects through each VC. Thinking back on the project, I would've suggested we really think about the UX and how to setup the app navigation before we start. Saving ourselves a lot of headaches later on as far as passing information around and dealing with the app lifecycle.
+    
+    So to fix the problem of the objects not being passed around correctly my TL helped me implement dependency injection so the object was ready to move to the next VC and the next VC was ready to receive it.
   
 3. Share a chunk of code (or file) you're proud of and explain why.
 
-    `<Your answer here>`
+```
+    func updateMoodComment(mood: Mood, comment: String) {
+        if let index = moods.firstIndex(of: mood) {
+            var mood = moods[index]
+            mood.comment = comment
+            
+            moods[index] = mood
+            saveToPersistentStore()
+        }
+    }
+  ```
+  This function in the ModelController edits the comment in the cell that the user tapped. It finds the first index of that object and using the index, taps into the comment property and updates it with the new string value.
   
 4. What is your elevator pitch? (30 second description your Grandma or a 5-year old would understand)
 
-    `<Your answer here>`
+    Our app is a great way to track your daily moods, and lets you leave a comment for each day so you know what your overall opinion of that day was. It's like a mood tracker and journal entry all-in-one.
   
 5. What is your #1 feature?
 
-    `<Your answer here>`
+    Track your daily mood.
   
 6. What are you future goals?
 
-    `<Your answer here>`
+    Set a reminder each day to track your mood.
 
 ## Required Slides (Add your Keynote to your PR)
 
