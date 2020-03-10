@@ -24,7 +24,7 @@
 
 ## Hero Image
 
-![app screenshot](hero.png)
+![app screenshot](hero2.png)
 
 ## Questions (Answer indented below)
 
