@@ -16,41 +16,68 @@
 
 ## Links
 
-* Github Code: `<insert Github repository link here>`
-* Github Proposal: `<insert Proposal Pull Request here>`
-* Trello/Github Project Kanban: `<insert trello board here>`
+* Github Code: https://github.com/LambdaSchool/ios-pt2-bw4-worn-out-vici
+* Github Proposal: https://github.com/LambdaSchool/ios-build-sprint-project-proposal/pull/50
+* Trello/Github Project Kanban: https://github.com/LambdaSchool/ios-pt2-bw4-worn-out-vici/projects/1
 * Test Flight Signup (Recommended): `<insert beta signup link here>`
-* YouTube demo video (Recommended): `<insert video url here>`
+* YouTube demo video (Recommended): https://youtu.be/6tHjfCU1eBE
 
 ## Hero Image
 
-`<Post one screenshot in an iPhone Simulator frame or an iPhone 11 Pro render using placeit.com>`
+<img src="images/WornOut.png" width="1000">
 
 ## Questions (Answer indented below)
 
 1. What was your favorite feature to implement? Why?
 
-    `<Your answer here>`
+    Implementing a featuring using HealthKit was my favorite part for this Build Week. It was completely new to me and getting familiar with it opens up a lot of opportunities for me to build apps that can improve people's lives. It made me excited.
 
 2. What was your #1 obstacle or bug that you fixed? How did you fix it?
 
-    `<Your answer here>`
+    I ran into issues when I tried to implement Core Data. I couldn't remember how to implement the relationships. I fixed it by watching a lot of video tutorials and articles. 
   
 3. Share a chunk of code (or file) you're proud of and explain why.
 
-    `<Your answer here>`
+        // https://developer.apple.com/documentation/healthkit/hkobserverquery/executing_observer_queries
+        let runsType = HKObjectType.workoutType()
+        let predicate = HKQuery.predicateForWorkouts(with: .running)
+        let query = HKObserverQuery(sampleType: runsType, predicate: predicate) { (query, completion, error) in
+            if let error = error {
+                print("Error getting the new workouts: \(error)")
+                return
+            }
+            
+            self.sendNotification()
+                        
+            // If you have subscribed for background updates you must call the completion handler here.
+            completion()
+        }
+        store.execute(query)
+        store.enableBackgroundDelivery(for: runsType, frequency: .immediate) { (success, error) in
+            if success {
+                print("success")
+            } else if let error = error {
+                print("\(error.localizedDescription)")
+            }
+        }
+
+    HealthKit provides a long-running query that monitors the HealthKit store so I can easily get the most updated sample.
+
   
 4. What is your elevator pitch? (30 second description your Grandma or a 5-year old would understand)
 
-    `<Your answer here>`
+    An app that helps runners track the mileage of their running shoes.
   
 5. What is your #1 feature?
 
-    `<Your answer here>`
+    Automatically tracks mileage based on your HealthKit runs.
   
 6. What are you future goals?
 
-    `<Your answer here>`
+    - Adding shoe pictures
+    - User profiles
+    - Shoe statistics
+    - Smarter notifications
 
 ## Required Slides (Add your Keynote to your PR)
 
