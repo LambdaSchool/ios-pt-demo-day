@@ -4,53 +4,74 @@
 
 1. Fork and clone the repository
 2. **Add your presentation content**
-    1. Slide deck (4 required slides)
-    2. Links
-    3. Answer all questions 
-    4. YouTube demo video (1-2 min max)
-3. Polish your Github Code repository
-    1. Add screenshots and an overview to your GitHub Code Repository
-    2. You should make that repository the "Public Portfolio" for your project
-    3. Look at [John Sundell's Splash project](https://github.com/JohnSundell/Splash) for inspiration (code, images, GIFs)
-4. Create a pull request (PR) and **tag your TL and Instructor**
+    https://docs.google.com/presentation/d/1ez1ifI3vLrlGbp_RAvRziGm5MAYjdGK5rjjAg-ONeWA/edit?usp=sharing
 
 ## Links
 
-* Github Code: `<insert Github repository link here>`
-* Github Proposal: `<insert Proposal Pull Request here>`
+* Github Code: https://github.com/hai666l/Note-Tracker
+* Github Proposal: https://github.com/hai666l/ios-build-sprint-project-proposal
 * Trello/Github Project Kanban: `<insert trello board here>`
 * Test Flight Signup (Recommended): `<insert beta signup link here>`
 * YouTube demo video (Recommended): `<insert video url here>`
 
 ## Hero Image
 
-`<Post one screenshot in an iPhone Simulator frame or an iPhone 11 Pro render using placeit.com>`
+
 
 ## Questions (Answer indented below)
 
 1. What was your favorite feature to implement? Why?
 
-    `<Your answer here>`
+    My favorite feature to implement was the Theme Selection, it took a while but I learned a lot in how to successfully edit the apperances of buttons, text, and backgrounds appwide
 
 2. What was your #1 obstacle or bug that you fixed? How did you fix it?
 
-    `<Your answer here>`
+    Themes often wouldn't apply to everything we wanted them to, there are still a few visual bugs but for the most part these were fixed by linking them from the storyboard and doing edits to code 
   
 3. Share a chunk of code (or file) you're proud of and explain why.
 
-    `<Your answer here>`
+       `@IBAction func colorTapped(_ sender: UIButton) {
+        if sender.accessibilityLabel == "font" {
+            for index in 0...identifiers.count {
+                if sender.accessibilityIdentifier == identifiers[index] {
+                    Theme.current.fontColor = colors[index]
+                    return;
+                }
+            }
+        }
+        if sender.accessibilityLabel == "button" {
+            for index in 0...identifiers.count {
+                if sender.accessibilityIdentifier == identifiers[index] {
+                    Theme.current.buttonColor = colors[index]
+                    return;
+                }
+            }
+        }
+        if sender.accessibilityLabel == "background" {
+            for index in 0...identifiers.count {
+                if sender.accessibilityIdentifier == identifiers[index] {
+                    Theme.current.backgroundColor = colors[index]
+                    return;
+                }
+            }
+        }
+    }`
+    This code is used for setting the theme from 27 possible different uibutton choices, it takes two arrays and compares their values to find out which specific label and identifier was responsible for sending the colorChanged event
   
 4. What is your elevator pitch? (30 second description your Grandma or a 5-year old would understand)
 
-    `<Your answer here>`
+    Our app is a note taking app for everyone, but focused towards creative people who want a simple and completely customizable experience for their note taking app
   
 5. What is your #1 feature?
 
-    `<Your answer here>`
+    Theme color selection from many different choices
   
 6. What are you future goals?
 
-    `<Your answer here>`
+    Add a view for selecting a color from a custom rgb slider to be used as a custom theme color.
+    Pinning, archiving, trash storage for notes
+    Timestamps in the tableViewCells
+
 
 ## Required Slides (Add your Keynote to your PR)
 
